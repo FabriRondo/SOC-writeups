@@ -1,7 +1,7 @@
 # Traffic Analysis Exercise: Easy As 123
 **Fuente:** [malware-traffic-analysis.net - 2026-02-28](https://www.malware-traffic-analysis.net/2026/02/28/index.html)
 **Herramienta:** Wireshark
-**Fecha de análisis:** [30/07/2026]
+**Fecha de análisis:** 30/07/2026
 ## Escenario
 Como analista SOC, se detectaron múltiples alertas en el SIEM por firmas de **NetSupport Manager RAT**
 desde la IP `45.131.214.85` sobre el puerto TCP 443. La actividad comenzó el 28 de febrero de 2026 a
@@ -57,8 +57,19 @@ El host `DESKTOP-TEYQ2NR` (IP `10.2.28.88`, MAC `00:19:d1:b2:4d:ad`), utilizado 
 las alertas de NetSupport Manager RAT del SIEM. Se recomienda aislar el equipo, revisar
 persistencia del RAT y resetear las credenciales del usuario afectado.
 ## Qué aprendí
+
 - A identificar un host infectado a partir de una IP/IOC reportada en una alerta, sin depender
   de una sola fuente: cuando DHCP no tenía el hostname, pude encontrarlo por NBNS.
-- Diferencia entre protocolos de identificación (NBNS/DHCP), autenticación (Kerberos) y
-  consulta de directorio (SAMR/LDAP) dentro de un entorno Active Directory.
-- A pensar en orden lógico "qué protocolo tendría este dato" en vez de probar todo al azar.
+- Qué es y para qué sirve cada protocolo que aparece en un entorno con Active Directory:
+  - **LDAP/CLDAP**: consultas al directorio (búsqueda de objetos, servicios, estructura del dominio).
+  - **AS-REQ (Kerberos)**: el primer paso de autenticación, donde un cliente pide un ticket
+    inicial (TGT) al Domain Controller. Ahí aparece el username de la cuenta que se autentica.
+  - **SAMR**: protocolo usado para consultar/administrar cuentas locales o de dominio
+    (Security Account Manager Remote) — expone datos como el nombre completo del usuario.
+- El nombre completo del usuario fue el dato que más costó encontrar: probé varios protocolos
+  antes de dar con el correcto, revisando puntualmente los paquetes de tipo "Query"
+  (`QueryUserInfo` en SAMR) y el campo "Info" dentro del detalle de cada paquete en Wireshark,
+  en vez de mirar solo la columna de resumen.
+- A pensar en orden lógico "qué protocolo tendría este dato" en vez de probar filtros al azar —
+  cada dato del informe (IP, MAC, hostname, usuario, nombre completo) vino de una fuente distinta
+  y verificable, lo cual es justo cómo se valida un hallazgo en un caso real.

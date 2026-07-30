@@ -1,7 +1,7 @@
 # Traffic Analysis Exercise: Easy As 123
 **Fuente:** [malware-traffic-analysis.net - 2026-02-28](https://www.malware-traffic-analysis.net/2026/02/28/index.html)
 **Herramienta:** Wireshark
-**Fecha de análisis:** [poné la fecha en la que lo hiciste]
+**Fecha de análisis:** [30/07/2026]
 ## Escenario
 Como analista SOC, se detectaron múltiples alertas en el SIEM por firmas de **NetSupport Manager RAT**
 desde la IP `45.131.214.85` sobre el puerto TCP 443. La actividad comenzó el 28 de febrero de 2026 a

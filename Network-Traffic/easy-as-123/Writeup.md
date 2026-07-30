@@ -46,30 +46,30 @@ un reporte de incidente que permita rastrear la máquina infectada.
 Filtrando `ip.addr == 45.131.214.85` se confirmó que `10.2.28.88` es el host que se comunica
 con la IP reportada en la alerta, consistente con tráfico de NetSupport RAT sobre TCP 443.
 
-![Filtro IP maliciosa](screenshots/02-mac-address.png)
+![Filtro IP maliciosa](01-ip-infectada.png)
 
 ### 2. Dirección MAC
 En el frame Ethernet con IP origen `10.2.28.88` se identificó la MAC del adaptador de red.
 
-![MAC address](screenshots/02-mac-address.png)
+![MAC address](02-mac-address.png)
 
 ### 3. Hostname
 DHCP no devolvió el hostname en este caso. Se encontró en tráfico NBNS, donde el host
 se registra a sí mismo en la red por su nombre NetBIOS.
 
-![Hostname NBNS](screenshots/03-hostname-nbns.png)
+![Hostname NBNS](03-hostname-nbns.png)
 
 ### 4. Usuario
 En el paquete Kerberos `AS-REQ` (solicitud de autenticación contra el Domain Controller),
 el campo `CNameString` reveló el username de la cuenta.
 
-![Usuario Kerberos](screenshots/04-usuario-kerberos.png)
+![Usuario Kerberos](04-usuario-kerberos.png)
 
 ### 5. Nombre completo del usuario
 El protocolo SAMR (usado para consultar cuentas en el dominio) expuso el `Full Name`
 asociado a la cuenta en una respuesta `QueryUserInfo`.
 
-![Nombre completo SAMR](screenshots/05-nombre-completo-samr.png)
+![Nombre completo SAMR](05-nombre-completo-samr.png)
 
 ## Conclusión
 

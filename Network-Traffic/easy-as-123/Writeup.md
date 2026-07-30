@@ -46,7 +46,7 @@ un reporte de incidente que permita rastrear la máquina infectada.
 Filtrando `ip.addr == 45.131.214.85` se confirmó que `10.2.28.88` es el host que se comunica
 con la IP reportada en la alerta, consistente con tráfico de NetSupport RAT sobre TCP 443.
 
-![Filtro IP maliciosa](01-ip-infectada.png)
+![Filtro IP maliciosa](01-IP-Afectada.png)
 
 ### 2. Dirección MAC
 En el frame Ethernet con IP origen `10.2.28.88` se identificó la MAC del adaptador de red.

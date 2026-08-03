@@ -1,6 +1,6 @@
 # Análisis de Phishing: "Liberação de IRPF"
 
-**Fuente de la muestra:** [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot) — `sample-1000.eml`
+**Fuente de la muestra:** [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1000.eml) — `sample-1000.eml`
 **Analista:** *(tu nombre / handle)*
 **Fecha del análisis:** Agosto 2026
 **Tipo de campaña:** Phishing por correo electrónico con adjunto PDF malicioso

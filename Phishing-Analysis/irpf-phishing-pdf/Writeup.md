@@ -36,7 +36,7 @@ El nombre visible del remitente no era legible a simple vista — estaba codific
 From: =?utf-8?B?W0JCXSAtIFNldSBzYWxkbyBmb2kgbGliZXJhZG8gLSBDw7NkaWdvOiAxMTA4NDMzOTY0NzEzMDg1MTkyMQ==?= <prestonconstance587@gmail.com>
 ```
 
-![Cabeceras del correo mostrando From, Subject y Date codificados en Base64](images/01-headers-raw.png)
+![Cabeceras del correo mostrando From, Subject y Date codificados en Base64](Screenshots/01-imagen.png)
 
 Al decodificar el Base64:
 
@@ -44,7 +44,7 @@ Al decodificar el Base64:
 [BB] - Seu saldo foi liberado - Código: 11084339647130851921  <prestonconstance587@gmail.com>
 ```
 
-![Decodificación Base64 del display name del remitente](images/02-decode-sender-name.png)
+![Decodificación Base64 del display name del remitente](Screenshots/02-imagen.png)
 
 **Observación:** tomando como referencia la dirección de correo (`prestonconstance587`), el nombre "esperable" sería algo como *"Preston Constance"*. En cambio, el atacante configuró un display name falso (`[BB] - Seu saldo foi liberado...`) para simular ser una notificación legítima de un banco brasileño (posiblemente Banco do Brasil, dado el prefijo `[BB]`), maximizando la credibilidad del engaño.
 
@@ -59,7 +59,7 @@ Subject: =?utf-8?B?TGliZXJhw6fDo28gZGUgSVJQRiAtIDZOd2x5ZnpXY3NOZXJ2?=
 	=?utf-8?B?MA==?=
 ```
 
-![Decodificación Base64 del asunto del correo](images/03-decode-subject.png)
+![Decodificación Base64 del asunto del correo](Screenshots/04-imagen.png)
 
 Resultado decodificado:
 
@@ -107,7 +107,7 @@ El adjunto fue extraído directamente del cuerpo MIME del `.eml` (venía embebid
 
 ### Verificación en VirusTotal (archivo)
 
-![Resultado de VirusTotal para el hash del PDF: 23 de 63 motores lo detectan como malicioso](images/04-vt-file-score.png)
+![Resultado de VirusTotal para el hash del PDF: 23 de 63 motores lo detectan como malicioso](Screenshots/03-imagen.png)
 
 **23 / 63** motores de seguridad marcan el archivo como malicioso. Detecciones representativas:
 
@@ -126,7 +126,7 @@ La etiqueta de amenaza consolidada por la comunidad es **`trojan.abphisher/atmn`
 
 Se decodificó manualmente el stream Base64 del PDF para inspeccionar su estructura interna de objetos, encontrando el siguiente objeto de anotación:
 
-![Decodificación del stream Base64 del PDF mostrando el objeto /Annot con la URL embebida](images/05-decode-pdf-stream.png)
+![Decodificación del stream Base64 del PDF mostrando el objeto /Annot con la URL embebida](Screenshots/05-imagen.png)
 
 ```
 6 0 obj
@@ -147,7 +147,7 @@ Este dominio corresponde a **Azure Static Website / Blob Storage**, un servicio 
 
 ### Verificación en VirusTotal (URL de destino)
 
-![Resultado de VirusTotal para la URL de Azure Blob: 6 de 92 motores la marcan como maliciosa](images/06-vt-url-score.png)
+![Resultado de VirusTotal para la URL de Azure Blob: 6 de 92 motores la marcan como maliciosa](Screenshots/06-imagen.png)
 
 **6 / 92** motores marcan la URL `okokoaksoa.z13.web.core.windows.net` como maliciosa, con último análisis reportado 8 días antes de esta revisión. Esto constituye una **segunda fuente de verificación independiente**, confirmando no solo que el archivo adjunto es malicioso, sino que la infraestructura de destino del enlace también está catalogada como tal.
 

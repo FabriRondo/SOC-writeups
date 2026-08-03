@@ -101,7 +101,6 @@ La IP `20.97.213.223` pertenece al rango de **Microsoft Azure**, lo que sugiere 
 | Nombre de archivo | `csWuYjyqO2IR.pdf` |
 | Tamaño | 95.28 KB |
 | Hash SHA-256 | `cfc5fbc759dcc599c8329dd94f9364394c7b1e875d6ff515c7337e00fb1f30cf` |
-| Metadato "Creator" | IronPdf v2022.11.10299 (librería de generación automatizada de PDFs) |
 
 El adjunto fue extraído directamente del cuerpo MIME del `.eml` (venía embebido en Base64 dentro del multipart) y se calculó su hash SHA-256 para su verificación en VirusTotal.
 

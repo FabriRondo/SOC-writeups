@@ -193,6 +193,15 @@ Las técnicas 1 y 2 se confirmaron a mano, leyendo los headers del correo y deco
 
 La muestra analizada corresponde a una campaña de phishing dirigida, automatizada y de bajo costo operativo para el atacante: aprovecha una cuenta real de Gmail (evitando problemas de autenticación SPF/DKIM/DMARC) y aloja su infraestructura de redirección en un servicio cloud legítimo (Azure Blob Storage), dificultando su detección temprana por reputación de dominio.
 
+## Qué aprendí
+
+- Cómo se usa Base64 y cómo "limpiarlo" para que decodifique bien
+- Qué significan SPF, DKIM y DMARC, y que un correo puede pasar los tres perfecto y aun así ser phishing
+- Cómo extraer un adjunto que viene embebido en Base64 dentro de un `.eml`
+- A mirar la estructura interna de un PDF para encontrar un link escondido, en vez de confiar solo en el antivirus
+- La diferencia entre análisis estático (mirar el archivo quieto) y análisis dinámico (verlo correr en un sandbox), y que ninguno de los dos alcanza solo
+- Que hay que fijarse bien de dónde sale cada dato — VirusTotal no "descubre" comportamiento, solo muestra lo que reportan los sandboxes
+
 ## Referencias
 
 - Muestra original: [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1000.eml)

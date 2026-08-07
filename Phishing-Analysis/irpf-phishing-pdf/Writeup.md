@@ -206,4 +206,5 @@ La muestra analizada corresponde a una campaña de phishing dirigida, automatiza
 
 - Muestra original: [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1000.eml)
 - [VirusTotal — análisis del hash del PDF](https://www.virustotal.com/gui/file/cfc5fbc759dcc599c8329dd94f9364394c7b1e875d6ff515c7337e00fb1f30cf)
+- [base64 — Encoding](https://www.base64decode.org/)
 - [MITRE ATT&CK](https://attack.mitre.org/)

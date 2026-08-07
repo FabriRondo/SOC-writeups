@@ -56,9 +56,9 @@ señales que delatarían al correo como malicioso.
 | Tipo | Valor | Detección | Rol en el ataque |
 |---|---|---|---|
 | Dominio spoofed | access-accsecurity.com | — | Se hace pasar por Microsoft |
-| Dominio/IP SMTP real | nonkfrgr.co.uk / 89.144.9.87 | VT: 0/91 | Origen real del envío |
+| Dominio/IP SMTP real | nonkfrgr.co.uk / 89.144.9.87 | VirusTotal: 0/91 | Origen real del envío |
 | Email del atacante | solutionteamrecognizd02@gmail.com | — | Canal de contacto real (Reply-To) |
-| URL tracking pixel | thebandalisty.com/track/... | VT: 11/92 | Valida que el correo fue abierto |
+| URL tracking pixel | thebandalisty.com/track/... | VirusTotal: 11/92 | Valida que el correo fue abierto |
 
 ![virustotal-url](assets/virustotal-url.png)
 *Resultado de VirusTotal para la URL del tracking pixel: 11/92 motores la

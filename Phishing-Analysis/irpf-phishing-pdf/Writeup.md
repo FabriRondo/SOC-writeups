@@ -6,13 +6,13 @@
 
 ---
 
-## Resumen ejecutivo
+## Resumen 
 
 Se analizó una muestra de phishing extraída del repositorio público `phishing_pot`, correspondiente a una campaña dirigida a víctimas de habla portuguesa (Brasil), que suplanta una notificación de liberación de saldo relacionada al **IRPF** (*Imposto de Renda de Pessoa Física*, equivalente al Impuesto sobre la Renta de las Personas Físicas). El correo utiliza técnicas de ingeniería social basadas en urgencia económica y adjunta un PDF que contiene un enlace embebido hacia infraestructura de Azure Blob Storage abusada. El análisis dinámico en sandbox confirma comportamiento consistente con robo de credenciales, evasión de defensas e inyección de procesos.
 
 ---
 
-## Metadatos del correo
+## Detalles del correo
 
 | Campo | Valor |
 |---|---|

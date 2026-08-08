@@ -75,9 +75,11 @@ marcan como maliciosa, categorizada como phishing.*
 
 ## Cosas que se podria haber detectado/desprevenido.
 
-Regla de contenido: imagen 1x1 con visibility:hidden es indicador casi siempre malicioso
-Regla de dominio: Reply-To con dominio distinto al From es sospechoso
-Regla de auth: bloquear/cuarentena automática cuando SPF+DKIM+DMARC fallan los tres
+**Regla de contenido:** imagen 1x1 con visibility:hidden es indicador casi siempre malicioso
+
+**Regla de dominio:** Reply-To con dominio distinto al From es sospechoso
+
+**Regla de auth:** bloquear/cuarentena automática cuando SPF+DKIM+DMARC fallan los tres
 
 ## Conclusión
 

@@ -89,6 +89,8 @@ social conversacional**: busca que la víctima responda al mail para abrir
 un canal de contacto directo con el atacante, quien luego podría escalar el
 engaño (pedir datos, avanzar hacia un ataque tipo BEC, etc).
 
+A diferencia del caso anterior (irpf-phishing-pdf), donde el compromiso se daba al abrir un adjunto y cargar credenciales en un link falso, en este caso el ataque no busca robar contraseñas: depende de que la víctima responda al correo, abriendo una vía de contacto directo con el atacante.
+
 ## Lo que aprendí
 
 - Diferencia entre phishing con link/adjunto vs. phishing que busca

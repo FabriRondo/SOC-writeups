@@ -1,7 +1,7 @@
 # Phishing Analysis — Microsoft Account Spoofing (Spearphishing via Service)
 **Fuente de la muestra:** [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1001.eml) — `sample-1001.eml`
 **Fecha del análisis:** 07/08/2026
-**Tipo de campaña:** Phishing con suplementacion de identidad(microsoft)
+**Tipo de campaña:** Phishing con suplantación de identidad(microsoft)
 
 ## Resumen
 Análisis de un correo de phishing obtenido de phishing_pot que suplanta a
@@ -85,7 +85,7 @@ engaño (pedir datos, avanzar hacia un ataque tipo BEC, etc).
 
 - Diferencia entre phishing con link/adjunto vs. phishing que busca
   respuesta directa (T1566 sin sub-técnica de link/attachment).
-- Qué es un tracking pixel y su rol en reconnaissance (T1598.001), separado
+- Qué es un tracking pixel y su rol en **reconnaissance** (T1598.001), separado
   del vector de ataque principal.
 - Bayesian poisoning como técnica de evasión de filtros antispam.
 - A leer Authentication-Results correctamente: que SPF/DKIM/DMARC fallen no

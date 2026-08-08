@@ -20,6 +20,7 @@ adjunto malicioso: busca que la víctima responda directamente al correo.
 | Reply-To | solutionteamrecognizd02@gmail.com |
 
 ![headers](screenshots/headers.png)
+
 *Header principal: se puede ver el remitente falso y el Reply-To que
 redirige a una cuenta de Gmail ajena a Microsoft.*
 

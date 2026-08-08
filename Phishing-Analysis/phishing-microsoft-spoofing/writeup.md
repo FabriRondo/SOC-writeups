@@ -19,13 +19,13 @@ adjunto malicioso: busca que la víctima responda directamente al correo.
 | Date | Thu, 27 Jul 2023 07:40:03 +0000 |
 | Reply-To | solutionteamrecognizd02@gmail.com |
 
-![headers](assets/headers.png)
+![headers](screenshots/headers.png)
 *Header principal: se puede ver el remitente falso y el Reply-To que
 redirige a una cuenta de Gmail ajena a Microsoft.*
 
 ## Cadena de envío (Received headers) y autenticación
 
-![received-chain](assets/received-chain.png)
+![received-chain](screenshots/received-chain.png)
 *El servidor real que envió el correo es `nonkfrgr.co.uk` (89.144.9.87),
 sin relación con Microsoft. Los tres mecanismos de autenticación fallaron:
 SPF none, DKIM none, DMARC permerror — evidencia de que el dominio
@@ -33,14 +33,14 @@ SPF none, DKIM none, DMARC permerror — evidencia de que el dominio
 
 ## Vista del correo (renderizado)
 
-![email-preview](assets/email-preview.png)
+![email-preview](screenshots/email-preview.png)
 *Así lo ve la víctima. Se resalta la barra de estado inferior del navegador:
 al pasar el mouse sobre "Report The User" el link real no va a Microsoft,
 va a un `mailto:` hacia la cuenta de Gmail del atacante.*
 
 ## Tracking pixel
 
-![tracking-pixel](assets/tracking-pixel.png)
+![tracking-pixel](screenshots/tracking-pixel.png)
 *Imagen de 1x1 invisible (`visibility:hidden`) alojada en un dominio externo.
 Se carga automáticamente cuando el cliente de correo renderiza el HTML,
 confirmándole al atacante que la dirección está activa y el correo fue abierto.*
@@ -63,7 +63,7 @@ señales que delatarían al correo como malicioso.
 | Email del atacante | solutionteamrecognizd02@gmail.com | — | Canal de contacto real (Reply-To) |
 | URL tracking pixel | thebandalisty.com/track/... | VirusTotal: 11/92 | Valida que el correo fue abierto |
 
-![virustotal-url](assets/virustotal-url.png)
+![virustotal-url](screenshots/virustotal-url.png)
 *Resultado de VirusTotal para la URL del tracking pixel: 11/92 motores la
 marcan como maliciosa, categorizada como phishing.*
 

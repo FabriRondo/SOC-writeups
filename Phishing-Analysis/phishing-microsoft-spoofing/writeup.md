@@ -1,7 +1,7 @@
 # Phishing Analysis — Microsoft Account Spoofing (Spearphishing via Service)
 **Fuente de la muestra:** [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1001.eml) — `sample-1001.eml`
 **Fecha del análisis:** 07/08/2026
-**Tipo de campaña:** ho
+**Tipo de campaña:** Phishing con suplementacion de identidad(microsoft)
 
 ## Resumen
 Análisis de un correo de phishing obtenido de phishing_pot que suplanta a

@@ -1,7 +1,7 @@
 # Phishing Analysis — Microsoft Account Spoofing (Spearphishing via Service)
 **Fuente de la muestra:** [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1001.eml) — `sample-1001.eml`
 **Fecha del análisis:** 07/08/2026
-**Tipo de campaña:** 
+**Tipo de campaña:** ho
 
 ## Resumen
 Análisis de un correo de phishing obtenido de phishing_pot que suplanta a
@@ -19,9 +19,7 @@ adjunto malicioso: busca que la víctima responda directamente al correo.
 | Date | Thu, 27 Jul 2023 07:40:03 +0000 |
 | Reply-To | solutionteamrecognizd02@gmail.com |
 
-![headers](screenshots/headers.png)
-
-*Header principal: se puede ver el remitente falso y el Reply-To que
+![headers](screenshots/headers.png)*Header principal: se puede ver el remitente falso y el Reply-To que
 redirige a una cuenta de Gmail ajena a Microsoft.*
 
 ## Cadena de envío (Received headers) y autenticación

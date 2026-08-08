@@ -73,6 +73,12 @@ marcan como maliciosa, categorizada como phishing.*
 | Phishing | T1566 | El correo en sí, ingeniería social vía email pidiendo respuesta directa |
 | Gather Victim Identity Information: Spearphishing Service | T1598.001 | El tracking pixel confirma que la cuenta/dirección está activa |
 
+## Cosas que se podria haber detectado/desprevenido.
+
+Regla de contenido: imagen 1x1 con visibility:hidden es indicador casi siempre malicioso
+Regla de dominio: Reply-To con dominio distinto al From es sospechoso
+Regla de auth: bloquear/cuarentena automática cuando SPF+DKIM+DMARC fallan los tres
+
 ## Conclusión
 
 Correo confirmado como malicioso. A diferencia de un phishing clásico de
@@ -91,7 +97,7 @@ engaño (pedir datos, avanzar hacia un ataque tipo BEC, etc).
 - A leer Authentication-Results correctamente: que SPF/DKIM/DMARC fallen no
   significa que el filtro "ignoró" el correo, significa que lo evaluó y
   igual lo dejó pasar.
-
+  
 ## Referencias
 
 - Muestra original: [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1001.eml)

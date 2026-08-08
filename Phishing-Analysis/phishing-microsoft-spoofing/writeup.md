@@ -92,3 +92,9 @@ engaño (pedir datos, avanzar hacia un ataque tipo BEC, etc).
 - A leer Authentication-Results correctamente: que SPF/DKIM/DMARC fallen no
   significa que el filtro "ignoró" el correo, significa que lo evaluó y
   igual lo dejó pasar.
+
+## Referencias
+
+- Muestra original: [rf-peixoto/phishing_pot](https://github.com/rf-peixoto/phishing_pot/blob/main/email/sample-1001.eml)
+- [VirusTotal — análisis del hash del PDF](https://www.virustotal.com/gui/file/cfc5fbc759dcc599c8329dd94f9364394c7b1e875d6ff515c7337e00fb1f30cf)
+- [MITRE ATT&CK](https://attack.mitre.org/)

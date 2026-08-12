@@ -2,7 +2,7 @@
 
 **Documentación técnica de análisis de incidentes de seguridad**, hechos como práctica autodidacta hacia un rol de SOC Analyst L1 → Cyber Threat Intelligence.
 
-No son ejercicios copiados de un curso: cada caso parte de una muestra real (PCAP, .eml, malware sample) y se resuelve con análisis manual — Wireshark, headers crudos, VirusTotal — documentando el proceso completo, no solo el resultado final.
+Cada caso parte de una muestra real (PCAP, .eml, malware sample) y se resuelve con análisis manual — Wireshark, headers crudos, VirusTotal — documentando el proceso completo, no solo el resultado final.
 
 ---
 
@@ -49,4 +49,4 @@ Cada writeup sigue el mismo esqueleto de investigación:
 
 ## 🛠️ Skills demostradas
 
-`Análisis de headers SMTP (SPF/DKIM/DMARC)` `Wireshark`
+`Análisis de headers SMTP (SPF/DKIM/DMARC)` `Wireshark` , 

@@ -28,16 +28,23 @@ El SOC recibió una alerta en el SIEM por "escaneo de puertos de local a local":
 
 ### 1. Identificación del escaneo de puertos
 
-Usando **Statistics → Endpoints** y luego **Statistics → Conversations (TCP)** en Wireshark, se identificó que la IP `10.251.96.4` establecía cientos de conversaciones TCP cortas contra la IP `10.251.96.5`, cada una a un puerto de destino distinto, en una ventana de tiempo muy breve.
+Usando **Statistics → Endpoints** en Wireshark, se observó que las IPs `10.251.96.4` y `10.251.96.5` concentraban un volumen de tráfico inusualmente alto respecto al resto de los endpoints del PCAP.
 
-![Endpoints overview](images/01-endpoints-overview.png)
-![Conversations TCP](images/02-conversations-tcp-syn-pattern.png)
+![Endpoints overview](screenshots/01-endpoints-overview.png)
+
+Al revisar **Statistics → Conversations (IPv4)**, esa misma conversación entre ambas IPs se destacaba con 15.883 paquetes y 770 segundos de duración, muy por encima de cualquier otra conversación registrada.
+
+![Conversations IPv4 summary](screenshots/03-conversations-ipv4-summary.png)
+
+Profundizando en **Conversations (TCP)**, se confirmó que la IP `10.251.96.4` establecía cientos de conversaciones TCP cortas contra la IP `10.251.96.5`, cada una a un puerto de destino distinto, en una ventana de tiempo muy breve — el patrón característico de un escaneo de puertos.
+
+![Conversations TCP](screenshots/02-conversations-tcp-syn-pattern.png)
 
 ### 2. Tipo de escaneo
 
 Filtrando por `ip.src==10.251.96.4`, se observó que cada conexión consta de solo 2 paquetes: un `SYN` enviado por el atacante, seguido de un `SYN-ACK` o `RST` de la víctima, sin que el atacante complete el handshake de tres vías (no se envía el `ACK` final). Este patrón corresponde a un **TCP SYN scan** (half-open scan), una técnica de reconocimiento sigilosa.
 
-![SYN/RST flags pattern](images/04-syn-rst-flags-filtered.png)
+![SYN/RST flags pattern](screenshots/04-syn-rst-flags-filtered.png)
 
 ### 3. Herramientas de reconocimiento adicionales
 
@@ -46,27 +53,27 @@ Filtrando por tráfico HTTP (`http.request`), se identificaron dos herramientas 
 - **gobuster/3.0.1**: utilizada para enumerar rutas y archivos del servidor web mediante peticiones GET.
 - **sqlmap/1.4.7**: utilizada para probar inyecciones SQL mediante peticiones POST.
 
-![gobuster User-Agent](images/05-gobuster-useragent.png)
-![sqlmap User-Agent](images/06-sqlmap-useragent.png)
+![gobuster User-Agent](screenshots/05-gobuster-useragent.png)
+![sqlmap User-Agent](screenshots/06-sqlmap-useragent.png)
 
 ### 4. Subida del web shell
 
 Se identificó una petición `POST /upload.php` con `Content-Type: multipart/form-data`, cuyo `Referer` apunta a `editprofile.php`. Dentro del cuerpo de la petición, el campo `Content-Disposition` revela el archivo subido: `filename="dbfunctions.php"`.
 
-![Upload POST request](images/07-webshell-upload-post.png)
-![Filename detail](images/08-webshell-filename-detail.png)
+![Upload POST request](screenshots/07-webshell-upload-post.png)
+![Filename detail](screenshots/08-webshell-filename-detail.png)
 
 ### 5. Ejecución de comandos vía web shell
 
 Una vez subido, el atacante interactuó con el web shell mediante peticiones GET a `/uploads/dbfunctions.php`, pasando comandos del sistema operativo a través del parámetro `cmd` (ej: `?cmd=id`, `?cmd=whoami`).
 
-![Comandos ejecutados vía web shell](images/09-webshell-commands-executed.png)
+![Comandos ejecutados vía web shell](screenshots/09-webshell-commands-executed.png)
 
 ### 6. Obtención de reverse shell
 
 El atacante ejecutó un comando en Python que abre un socket y se conecta de vuelta hacia su propia IP (`10.251.96.4`) en el puerto `4422`, obteniendo así una **reverse shell** interactiva en lugar de continuar ejecutando comandos uno por uno vía HTTP. Esto se confirmó cruzando el comando con tráfico TCP real entre ambas IPs en dicho puerto.
 
-![Reverse shell confirmada en Conversations](images/10-reverse-shell-port-confirmed.png)
+![Reverse shell confirmada en Conversations](screenshots/10-reverse-shell-port-confirmed.png)
 
 ## Conclusión
 

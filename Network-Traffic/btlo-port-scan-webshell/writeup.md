@@ -1,8 +1,9 @@
 # Análisis de Escaneo de Puertos y Compromiso Web (BTLO - Port Scan)
-
+**Fuente de la muestra:** [BTLO-challenge-network](https://blueteamlabs.online/home/challenge/network-analysis-web-shell-d4d3a2821b) — `newtork-analysis-web-shell`
+**Fecha del análisis:** 14/08/2026
 ## Escenario
 
-El SOC recibió una alerta en el SIEM por "escaneo de puertos de local a local": una IP privada interna comenzó a escanear otro sistema interno. Se investigó el archivo PCAP proporcionado para determinar si la actividad era maliciosa.
+El SOC recibió una alerta en su SIEM por "Escaneo de puertos de local a local", donde una IP privada interna comenzó a escanear otro sistema interno.
 
 ## Herramientas utilizadas
 

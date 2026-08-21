@@ -35,6 +35,7 @@ Análisis de PCAP ("Easy As 123") con RAT comercial abusado como malware. Identi
 
 ---
 
+
 ## 🧠 Metodología
 
 Cada writeup sigue el mismo esqueleto de investigación:
